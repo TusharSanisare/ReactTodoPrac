@@ -1,3 +1,8 @@
+created Simple React Todo application for practice FUN FUN.......
+bug----I know----
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
