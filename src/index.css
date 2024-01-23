@@ -1,0 +1,12 @@
+body{
+  background-color: #0c2d1a;
+}
+
+tb{
+  animation-duration: .5s;
+  transition-duration: 0.5s;
+}
+.done{
+  text-decoration: line-through;
+  /* border: 2px solid black; */
+}
