@@ -1,20 +1,26 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function AddTodo({ onNewItem }) {
-  const [name, setName] = useState();
-  const [date, setDate] = useState();
+  // const [name, setName] = useState();
+  // const [date, setDate] = useState();
 
-  const handleNameChange = () => {
-    setName(event.target.value);
-  };
-  const handleDateChange = () => {
-    setDate(event.target.value);
-  };
+  // const handleNameChange = () => {
+  //   setName(event.target.value);
+  // };
+  // const handleDateChange = () => {
+  //   setDate(event.target.value);
+  // };
+
+  // useRef
+  let todoName = useRef();
+  let todoDate = useRef();
 
   const handleSaveBtn = () => {
-    onNewItem(name, date);
-    setDate("");
-    setName("");
+    onNewItem(todoName.current.value, todoDate.current.value);
+    todoDate.current.value = "";
+    todoName.current.value = "";
+    // setDate("");
+    // setName("");
   };
 
   return (
@@ -25,21 +31,23 @@ function AddTodo({ onNewItem }) {
       <div className="col-12">
         <div className="form-outline">
           <input
+            // value={name}
+            // onChange={handleNameChange}
+            ref={todoName}
             type="text"
-            value={name}
             className="form-control"
             placeholder="Enter a task here"
-            onChange={handleNameChange}
           />
         </div>
       </div>
       <div className="col-12">
         <div className="form-outline">
           <input
+            // value={date}
+            // onChange={handleDateChxange}
+            ref={todoDate}
             type="date"
-            value={date}
             className="form-control"
-            onChange={handleDateChange}
           />
         </div>
       </div>
